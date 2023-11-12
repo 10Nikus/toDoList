@@ -29,20 +29,6 @@ app.post("/delete", (req, res) => {
   res.redirect("/");
 });
 
-app.post("/edit", (req, res) => {
-  req.class;
-  res.redirect("/");
-});
-
-app.post("/submitEdit", (req, res) => {
-  const index = req.body.index;
-  const newText = req.body.todo;
-  if (index !== undefined && newText !== undefined) {
-    listItem[index] = newText;
-  }
-  res.redirect("/");
-});
-
 app.listen(port, () => {
   console.log(`Server is listening on http://localhost:${port}`);
 });
