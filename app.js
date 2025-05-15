@@ -4,7 +4,6 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 3000;
 const listItem = ["Tidy my room", "Do homework", "Go running"];
-// Define a route to render the form
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -13,7 +12,6 @@ app.get("/", (req, res) => {
   res.render("index.ejs", { list: listItem });
 });
 
-// Define a route to handle form submission
 app.post("/submit", (req, res) => {
   if (req.body.todo) {
     listItem.unshift(req.body.todo);
